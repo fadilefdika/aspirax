@@ -134,16 +134,35 @@
                 <!-- Navigation Links (Desktop) -->
                 <div class="hidden md:flex items-center space-x-4 md:space-x-6">
                     <a href="#"
-                        class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Leaderboard</a>
-                    <a href="#"
-                        class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Statistics</a>
-                    <a href="#"
-                        class="text-sm font-medium text-gray-600 hover:text-black transition-colors">AspiroBot Edu</a>
-                    <a href="#"
-                        class="text-sm font-semibold text-gray-800 bg-white border border-gray-300 rounded-lg px-4 py-2 hover:bg-orange-500 hover:text-white transition-colors">
-                        Login With Metamask
+                    class="text-sm font-medium text-gray-600 hover:text-black transition-colors">
+                    Leaderboard
                     </a>
+                    <a href="#"
+                    class="text-sm font-medium text-gray-600 hover:text-black transition-colors">
+                    Statistics
+                    </a>
+                    <a href="#"
+                    class="text-sm font-medium text-gray-600 hover:text-black transition-colors">
+                    AspiroBot Edu
+                    </a>
+
+                    <!-- MetaMask Login Button -->
+                    <div>
+                        <meta name="csrf-token" content="{{ csrf_token() }}">
+                        <button
+                            id="metamask-login-desktop"
+                            type="button"
+                            data-signature-url="{{ url('/eth/signature') }}"
+                            data-authenticate-url="{{ url('/eth/authenticate') }}"
+                            data-redirect-url="{{ route('dashboard') }}"
+                            class="text-sm font-semibold bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg shadow-sm transition"
+                        >
+                            🔗 Login with MetaMask
+                        </button>
+                        <div id="metamask-error-desktop" class="hidden mt-4 p-2 text-sm text-red-600 bg-red-100 rounded"></div>
+                    </div>
                 </div>
+
 
                 <!-- Hamburger Button (Mobile) -->
                 <div class="md:hidden flex items-center">
@@ -160,10 +179,20 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg rounded-lg mt-2 p-4 absolute right-4 w-56">
                 <a href="#" class="block py-2 px-3 text-gray-600 hover:bg-gray-100 rounded">AspiroBot Edu</a>
-                <a href="#"
-                    class="block w-full text-center mt-3 py-2 px-3 font-semibold text-gray-800 bg-white border border-gray-300 rounded-lg hover:bg-orange-500 hover:text-white transition-colors">
-                    Login With Metamask
-                </a>
+                <!-- MetaMask Login -->
+            <meta name="csrf-token" content="{{ csrf_token() }}">
+            <button
+                id="metamask-login-mobile"
+                type="button"
+                data-signature-url="{{ url('/eth/signature') }}"
+                data-authenticate-url="{{ url('/eth/authenticate') }}"
+                data-redirect-url="{{ route('dashboard') }}"
+                class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-md shadow-sm transition"
+            >
+                🔗 Login with MetaMask
+            </button>
+            <div id="metamask-error-mobile" class="hidden mt-4 p-2 text-sm text-red-600 bg-red-100 rounded"></div>
+
             </div>
         </header>
 
@@ -523,6 +552,7 @@
 
     </div>
 
+    @vite(['resources/js/app.js'])
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // JavaScript untuk handle klik menu hamburger

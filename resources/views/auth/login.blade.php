@@ -44,7 +44,7 @@
                 {{ __('Log in') }}
             </x-primary-button>
 
-            <!-- MetaMask Login -->
+            {{-- <!-- MetaMask Login -->
             <meta name="csrf-token" content="{{ csrf_token() }}">
             <button
                 id="metamask-login"
@@ -56,7 +56,7 @@
             >
                 🔗 Login with MetaMask
             </button>
-            <div id="metamask-error" class="hidden mt-4 p-2 text-sm text-red-600 bg-red-100 rounded"></div>
+            <div id="metamask-error" class="hidden mt-4 p-2 text-sm text-red-600 bg-red-100 rounded"></div> --}}
 
         </div>
     </form>
