@@ -1,61 +1,74 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://github.com/fadil-efdika/aspiraX/actions"><img src="https://img.shields.io/github/actions/workflow/status/fadil-efdika/aspiraX/laravel.yml?branch=main" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Laravel Version"></a>
+<a href="https://img.shields.io/badge/web3-enabled-blue" alt="Web3"></a>
+<a href="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
 </p>
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# 🚀 AspiraX
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+AspiraX adalah **platform sosial media berbasis Web3** yang terinspirasi dari Twitter, namun dengan pendekatan **decentralized login via Metamask**.  
+Dengan AspiraX, identitas pengguna tetap aman karena tidak bergantung pada username/password tradisional.  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ✨ Fitur Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 🔑 **Login Web3 (Metamask)** → User masuk menggunakan wallet Metamask, menjaga privasi & identitas.  
+- 🤖 **Filter AI Anti-Kata Kasar** → Postingan akan difilter otomatis agar tetap sehat & aman.  
+- 🎮 **Gamifikasi** → Posting & komentar akan menambah poin. Semakin aktif, semakin "melek" terhadap isu-isu sosial, politik, dan lainnya.  
+- 🧩 **Berbasis Laravel** → Framework modern yang kuat, elegan, dan mudah dikembangkan.  
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Teknologi yang Digunakan
+- [Laravel](https://laravel.com/) (Backend utama)  
+- [Metamask](https://metamask.io/) (Web3 Authentication)  
+- [AI Toxic Filter](https://huggingface.co/) (Model NLP untuk filter kata kasar)  
+- MySQL / PostgreSQL (Database)  
+- TailwindCSS + Alpine.js (Frontend cepat & clean)  
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📦 Cara Instalasi
 
-### Premium Partners
+Ikuti langkah berikut untuk menjalankan AspiraX di lokal:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 1. Clone Repository
+```bash
+git clone https://github.com/fadil-efdika/aspiraX.git
+cd aspiraX
+```
+### 2. Install Dependency
+```bash
+composer install
+npm install && npm run dev
+```
 
-## Contributing
+### 3. Konfigurasi Environment
+Salin file .env.example menjadi .env:
+```bash
+cp .env.example .env
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Lalu sesuaikan:
 
-## Code of Conduct
+* Database (DB_CONNECTION, DB_DATABASE, DB_USERNAME, DB_PASSWORD)
+* App Key:
+```bash
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Migrasi & Seed Database
+```bash
+php artisan migrate --seed
+```
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 4. Jalankan Server
+```bash
+php artisan serve
+```
